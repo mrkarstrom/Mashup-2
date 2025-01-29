@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+
+# Testing and zip-file
+coverage/
+mashup.zip
+
+# Build output - for future builds
+dist/
+build/
+
+# Environment variables - if ever implied
+.env
