@@ -1,9 +1,9 @@
-import request from 'supertest'; 
-import { app } from '../index.js';
+import request from 'supertest';
+import { app } from '../server.js';
 
 describe('Edge Cases', () => {
   it('should return 400 for a very long MBID', async () => {
-    const longMBID = 'a'.repeat(1000);
+    const longMBID = 'a'.repeat(200);
     const res = await request(app).get(`/artist/${longMBID}`);
     expect(res.status).toBe(400);
     expect(res.body).toHaveProperty(

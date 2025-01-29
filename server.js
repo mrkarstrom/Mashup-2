@@ -2,7 +2,7 @@ import express from 'express';
 import { handleErrors } from './src/utils/ErrorHandler.js';
 import artistRoutes from './src/routes/artistRoutes.js';
 import rootRoutes from './src/routes/index.js';
-import logger from './src/utils/logger.js';
+import logger from './src/middleware/logger.js';
 const PORT = process.env.PORT || 3000;
 const app = express();
 

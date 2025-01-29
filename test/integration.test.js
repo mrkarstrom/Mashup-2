@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../index.js';
+import { app } from '../server.js';
 
 describe('Integration Tests', () => {
   it('should handle 404 for non-existent routes', async () => {
