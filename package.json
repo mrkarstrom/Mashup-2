@@ -1,11 +1,11 @@
 {
   "name": "mashup",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest --coverage",
-    "dev": "node --watch --env-file=.env index.js",
-    "start": "node index.js",
+    "dev": "node --watch --env-file=.env server.js",
+    "start": "node server.js",
     "zip": "zip -r mashup.zip . -x 'node_modules/*' -x '.git/*' -x 'coverage/*' -x 'mashup.zip'"
   },
   "keywords": [],

@@ -1,15 +1,8 @@
 import express from 'express';
-import { handleErrors } from './src/utils/ErrorHandler.js';
-import artistRoutes from './src/routes/artistRoutes.js';
-import logger from './src/utils/logger.js';
-const PORT = process.env.PORT || 3000;
-const app = express();
 
-app.use(express.json());
+const router = express.Router();
 
-app.use(logger);
-
-app.get('/', (req, res, next) => {
+router.get('/', (req, res, next) => {
   res.type('text/html');
   res.send(
     `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
@@ -38,17 +31,4 @@ app.get('/', (req, res, next) => {
   );
 });
 
-app.use('/artist', artistRoutes);
-
-app.use((req, res) => {
-  res.status(404).json({ error: 'Not found' });
-});
-
-app.use(handleErrors);
-
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
-}
-export { app };
+export default router;
