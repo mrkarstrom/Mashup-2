@@ -21,8 +21,10 @@ app.use((req, res) => {
 app.use(handleErrors);
 
 if (process.env.NODE_ENV !== 'test') {
+  const HOST = process.env.HOST || 'localhost';
+  const PROTOCOL = process.env.PROTOCOL || 'http';
   app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on ${PROTOCOL}://${HOST}:${PORT}`);
   });
 }
 export { app };
