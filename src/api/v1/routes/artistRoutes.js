@@ -1,8 +1,8 @@
 import express from 'express';
-import { ArtistService } from '../services/ArtistService.js';
-import { wrapAsync } from '../utils/wrapAsync.js';
+import { ArtistService } from '../../../services/ArtistService.js';
+import { wrapAsync } from '../../../utils/wrapAsync.js';
 import sanitizeHtml from 'sanitize-html';
-import { ErrorHandler } from '../utils/ErrorHandler.js';
+import { ErrorHandler } from '../../../utils/ErrorHandler.js';
 
 const router = express.Router();
 const artistService = new ArtistService();

@@ -12,3 +12,5 @@ export const handleErrors = (err, req, res, next) => {
     error: message,
   });
 };
+
+export default handleErrors;
